@@ -1,0 +1,1115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>1923 Barber Parlor — Beaumont, TX</title>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;700&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --black: #111110;
+    --dark: #1c1c1a;
+    --mid: #2e2e2b;
+    --warm-gray: #4a4a46;
+    --muted: #888780;
+    --light: #d4d2c9;
+    --cream: #f4f1e8;
+    --gold: #c9952a;
+    --gold-light: #e8b84b;
+    --white: #faf9f6;
+  }
+
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+
+  html { scroll-behavior: smooth; }
+
+  body {
+    font-family: 'DM Sans', sans-serif;
+    background: var(--white);
+    color: var(--black);
+    overflow-x: hidden;
+  }
+
+  /* NAV */
+  nav {
+    position: fixed;
+    top: 0; left: 0; right: 0;
+    z-index: 100;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1.25rem 3rem;
+    background: rgba(17,17,16,0.95);
+    backdrop-filter: blur(8px);
+    border-bottom: 1px solid rgba(201,149,42,0.2);
+  }
+
+  .nav-logo {
+    font-family: 'Playfair Display', serif;
+    font-size: 18px;
+    color: var(--gold-light);
+    letter-spacing: 1px;
+  }
+
+  .nav-links {
+    display: flex;
+    gap: 2rem;
+    list-style: none;
+  }
+
+  .nav-links a {
+    color: var(--light);
+    text-decoration: none;
+    font-size: 13px;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    font-weight: 400;
+    transition: color 0.2s;
+  }
+
+  .nav-links a:hover { color: var(--gold-light); }
+
+  .nav-book {
+    background: var(--gold);
+    color: var(--black);
+    padding: 8px 20px;
+    border-radius: 2px;
+    font-size: 12px;
+    font-weight: 500;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    text-decoration: none;
+    transition: background 0.2s;
+  }
+
+  .nav-book:hover { background: var(--gold-light); }
+
+  /* HERO */
+  .hero {
+    min-height: 100vh;
+    background: var(--black);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+    padding: 6rem 2rem 4rem;
+  }
+
+  .hero-pattern {
+    position: absolute;
+    inset: 0;
+    background-image:
+      repeating-linear-gradient(
+        0deg,
+        transparent,
+        transparent 60px,
+        rgba(201,149,42,0.04) 60px,
+        rgba(201,149,42,0.04) 61px
+      ),
+      repeating-linear-gradient(
+        90deg,
+        transparent,
+        transparent 60px,
+        rgba(201,149,42,0.04) 60px,
+        rgba(201,149,42,0.04) 61px
+      );
+  }
+
+  .hero-year {
+    font-size: 11px;
+    letter-spacing: 4px;
+    text-transform: uppercase;
+    color: var(--gold);
+    margin-bottom: 1.5rem;
+    position: relative;
+  }
+
+  .hero-year::before,
+  .hero-year::after {
+    content: '';
+    display: inline-block;
+    width: 30px;
+    height: 1px;
+    background: var(--gold);
+    vertical-align: middle;
+    margin: 0 12px;
+  }
+
+  .hero h1 {
+    font-family: 'Playfair Display', serif;
+    font-size: clamp(52px, 10vw, 96px);
+    font-weight: 700;
+    color: var(--cream);
+    line-height: 1;
+    letter-spacing: -1px;
+    margin-bottom: 0.5rem;
+    position: relative;
+  }
+
+  .hero h1 span {
+    color: var(--gold-light);
+    font-style: italic;
+  }
+
+  .hero-sub {
+    font-size: 15px;
+    color: var(--muted);
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    margin-bottom: 3rem;
+    position: relative;
+  }
+
+  .hero-stats {
+    display: flex;
+    gap: 3rem;
+    margin-bottom: 3rem;
+    position: relative;
+  }
+
+  .hero-stat {
+    text-align: center;
+  }
+
+  .hero-stat-n {
+    font-family: 'Playfair Display', serif;
+    font-size: 32px;
+    color: var(--gold-light);
+    font-weight: 700;
+  }
+
+  .hero-stat-l {
+    font-size: 11px;
+    color: var(--muted);
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    margin-top: 4px;
+  }
+
+  .hero-stat-divider {
+    width: 1px;
+    background: rgba(201,149,42,0.3);
+    align-self: stretch;
+  }
+
+  .hero-cta {
+    display: flex;
+    gap: 16px;
+    flex-wrap: wrap;
+    justify-content: center;
+    position: relative;
+  }
+
+  .btn-primary {
+    background: var(--gold);
+    color: var(--black);
+    padding: 14px 36px;
+    font-size: 13px;
+    font-weight: 500;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    text-decoration: none;
+    border-radius: 2px;
+    transition: all 0.2s;
+    border: none;
+    cursor: pointer;
+  }
+
+  .btn-primary:hover {
+    background: var(--gold-light);
+    transform: translateY(-1px);
+  }
+
+  .btn-outline {
+    background: transparent;
+    color: var(--light);
+    padding: 14px 36px;
+    font-size: 13px;
+    font-weight: 400;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    text-decoration: none;
+    border: 1px solid rgba(212,210,201,0.3);
+    border-radius: 2px;
+    transition: all 0.2s;
+    cursor: pointer;
+  }
+
+  .btn-outline:hover {
+    border-color: var(--gold);
+    color: var(--gold-light);
+  }
+
+  .scroll-hint {
+    position: absolute;
+    bottom: 2rem;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 8px;
+    color: var(--warm-gray);
+    font-size: 11px;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    animation: bounce 2s infinite;
+  }
+
+  .scroll-hint svg {
+    width: 16px;
+    height: 16px;
+    stroke: var(--warm-gray);
+    fill: none;
+    stroke-width: 1.5;
+  }
+
+  @keyframes bounce {
+    0%, 100% { transform: translateX(-50%) translateY(0); }
+    50% { transform: translateX(-50%) translateY(6px); }
+  }
+
+  /* INTRO STRIP */
+  .intro-strip {
+    background: var(--gold);
+    padding: 1rem 2rem;
+    display: flex;
+    justify-content: center;
+    gap: 3rem;
+    flex-wrap: wrap;
+  }
+
+  .strip-item {
+    font-size: 12px;
+    font-weight: 500;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    color: var(--black);
+    display: flex;
+    align-items: center;
+    gap: 8px;
+  }
+
+  .strip-item svg {
+    width: 14px;
+    height: 14px;
+    stroke: var(--black);
+    fill: none;
+    stroke-width: 2;
+  }
+
+  /* SECTIONS */
+  section {
+    padding: 6rem 2rem;
+  }
+
+  .container {
+    max-width: 1100px;
+    margin: 0 auto;
+  }
+
+  .section-label {
+    font-size: 11px;
+    letter-spacing: 4px;
+    text-transform: uppercase;
+    color: var(--gold);
+    margin-bottom: 1rem;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+  }
+
+  .section-label::after {
+    content: '';
+    flex: 1;
+    height: 1px;
+    background: rgba(201,149,42,0.2);
+    max-width: 60px;
+  }
+
+  .section-title {
+    font-family: 'Playfair Display', serif;
+    font-size: clamp(32px, 5vw, 52px);
+    font-weight: 700;
+    color: var(--black);
+    line-height: 1.1;
+    margin-bottom: 1rem;
+  }
+
+  .section-title em {
+    font-style: italic;
+    color: var(--gold);
+  }
+
+  /* SERVICES */
+  #services { background: var(--dark); }
+
+  #services .section-title { color: var(--cream); }
+  #services .section-label { color: var(--gold); }
+  #services .section-desc { color: var(--muted); font-size: 15px; max-width: 500px; margin-bottom: 3rem; line-height: 1.7; }
+
+  .services-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 1px;
+    background: rgba(201,149,42,0.1);
+    border: 1px solid rgba(201,149,42,0.1);
+  }
+
+  .service-card {
+    background: var(--mid);
+    padding: 2rem;
+    transition: background 0.2s;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .service-card::before {
+    content: '';
+    position: absolute;
+    top: 0; left: 0;
+    width: 3px;
+    height: 0;
+    background: var(--gold);
+    transition: height 0.3s;
+  }
+
+  .service-card:hover { background: #333330; }
+  .service-card:hover::before { height: 100%; }
+
+  .service-icon {
+    width: 44px;
+    height: 44px;
+    border: 1px solid rgba(201,149,42,0.3);
+    border-radius: 2px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 1.25rem;
+  }
+
+  .service-icon svg {
+    width: 20px;
+    height: 20px;
+    stroke: var(--gold);
+    fill: none;
+    stroke-width: 1.5;
+  }
+
+  .service-name {
+    font-family: 'Playfair Display', serif;
+    font-size: 18px;
+    color: var(--cream);
+    margin-bottom: 6px;
+  }
+
+  .service-desc {
+    font-size: 13px;
+    color: var(--muted);
+    line-height: 1.6;
+    margin-bottom: 1rem;
+  }
+
+  .service-price {
+    font-size: 13px;
+    color: var(--gold-light);
+    font-weight: 500;
+    letter-spacing: 1px;
+  }
+
+  /* ABOUT */
+  #about {
+    background: var(--cream);
+  }
+
+  .about-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 6rem;
+    align-items: center;
+  }
+
+  .about-text .section-desc {
+    font-size: 16px;
+    color: var(--warm-gray);
+    line-height: 1.8;
+    margin-bottom: 2rem;
+  }
+
+  .about-features {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+  }
+
+  .about-feature {
+    display: flex;
+    align-items: flex-start;
+    gap: 14px;
+  }
+
+  .about-feature-dot {
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    background: var(--gold);
+    margin-top: 7px;
+    flex-shrink: 0;
+  }
+
+  .about-feature p {
+    font-size: 14px;
+    color: var(--warm-gray);
+    line-height: 1.6;
+  }
+
+  .about-feature strong {
+    color: var(--black);
+    font-weight: 500;
+  }
+
+  .about-visual {
+    background: var(--dark);
+    border-radius: 2px;
+    padding: 3rem 2rem;
+    text-align: center;
+    border: 1px solid rgba(201,149,42,0.15);
+  }
+
+  .about-visual-year {
+    font-family: 'Playfair Display', serif;
+    font-size: 96px;
+    font-weight: 700;
+    color: rgba(201,149,42,0.15);
+    line-height: 1;
+    margin-bottom: 1rem;
+  }
+
+  .about-visual-text {
+    font-family: 'Playfair Display', serif;
+    font-size: 22px;
+    color: var(--cream);
+    font-style: italic;
+    margin-bottom: 0.5rem;
+  }
+
+  .about-visual-sub {
+    font-size: 12px;
+    color: var(--muted);
+    letter-spacing: 3px;
+    text-transform: uppercase;
+  }
+
+  .about-barbers {
+    margin-top: 2rem;
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+  }
+
+  .barber-row {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    padding: 12px 16px;
+    background: rgba(201,149,42,0.05);
+    border: 1px solid rgba(201,149,42,0.1);
+    border-radius: 2px;
+  }
+
+  .barber-avatar {
+    width: 38px;
+    height: 38px;
+    border-radius: 50%;
+    background: rgba(201,149,42,0.15);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: 'Playfair Display', serif;
+    font-size: 14px;
+    color: var(--gold-light);
+  }
+
+  .barber-name {
+    font-size: 14px;
+    color: var(--cream);
+    font-weight: 500;
+  }
+
+  .barber-title {
+    font-size: 11px;
+    color: var(--muted);
+    margin-top: 2px;
+  }
+
+  /* REVIEWS */
+  #reviews { background: var(--white); }
+
+  .reviews-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 24px;
+  }
+
+  .review-card {
+    background: var(--white);
+    border: 1px solid rgba(0,0,0,0.08);
+    border-radius: 2px;
+    padding: 2rem;
+    position: relative;
+  }
+
+  .review-quote {
+    font-family: 'Playfair Display', serif;
+    font-size: 64px;
+    color: rgba(201,149,42,0.15);
+    line-height: 0.5;
+    margin-bottom: 1rem;
+  }
+
+  .review-text {
+    font-size: 14px;
+    color: var(--warm-gray);
+    line-height: 1.7;
+    margin-bottom: 1.5rem;
+    font-style: italic;
+  }
+
+  .review-footer {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+
+  .review-author {
+    font-size: 13px;
+    font-weight: 500;
+    color: var(--black);
+  }
+
+  .review-source {
+    font-size: 11px;
+    color: var(--muted);
+    margin-top: 2px;
+  }
+
+  .stars {
+    color: var(--gold);
+    font-size: 14px;
+    letter-spacing: 2px;
+  }
+
+  /* HOURS */
+  #hours { background: var(--dark); }
+  #hours .section-title { color: var(--cream); }
+  #hours .section-label { color: var(--gold); }
+
+  .hours-layout {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 4rem;
+    align-items: start;
+  }
+
+  .hours-table {
+    display: flex;
+    flex-direction: column;
+    gap: 0;
+  }
+
+  .hour-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 14px 0;
+    border-bottom: 1px solid rgba(255,255,255,0.06);
+    font-size: 14px;
+  }
+
+  .hour-day { color: var(--muted); }
+  .hour-time { color: var(--cream); font-weight: 500; }
+  .hour-closed { color: var(--warm-gray); }
+
+  .hour-row.today .hour-day {
+    color: var(--gold-light);
+    font-weight: 500;
+  }
+
+  .today-badge {
+    font-size: 10px;
+    background: rgba(201,149,42,0.15);
+    color: var(--gold);
+    padding: 2px 8px;
+    border-radius: 20px;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    margin-left: 8px;
+  }
+
+  .contact-block {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+  }
+
+  .contact-item {
+    display: flex;
+    align-items: flex-start;
+    gap: 14px;
+  }
+
+  .contact-icon {
+    width: 40px;
+    height: 40px;
+    border: 1px solid rgba(201,149,42,0.2);
+    border-radius: 2px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+  }
+
+  .contact-icon svg {
+    width: 18px;
+    height: 18px;
+    stroke: var(--gold);
+    fill: none;
+    stroke-width: 1.5;
+  }
+
+  .contact-label {
+    font-size: 11px;
+    color: var(--muted);
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    margin-bottom: 4px;
+  }
+
+  .contact-value {
+    font-size: 15px;
+    color: var(--cream);
+  }
+
+  .contact-value a {
+    color: var(--cream);
+    text-decoration: none;
+  }
+
+  .contact-value a:hover { color: var(--gold-light); }
+
+  /* FOOTER */
+  footer {
+    background: var(--black);
+    padding: 3rem 2rem;
+    text-align: center;
+    border-top: 1px solid rgba(201,149,42,0.1);
+  }
+
+  .footer-logo {
+    font-family: 'Playfair Display', serif;
+    font-size: 24px;
+    color: var(--gold-light);
+    margin-bottom: 1rem;
+  }
+
+  .footer-tagline {
+    font-size: 12px;
+    color: var(--warm-gray);
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    margin-bottom: 2rem;
+  }
+
+  .footer-links {
+    display: flex;
+    justify-content: center;
+    gap: 2rem;
+    list-style: none;
+    margin-bottom: 2rem;
+  }
+
+  .footer-links a {
+    font-size: 12px;
+    color: var(--muted);
+    text-decoration: none;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    transition: color 0.2s;
+  }
+
+  .footer-links a:hover { color: var(--gold-light); }
+
+  .footer-copy {
+    font-size: 11px;
+    color: var(--warm-gray);
+  }
+
+  /* ANIMATIONS */
+  .fade-up {
+    opacity: 0;
+    transform: translateY(24px);
+    transition: opacity 0.6s ease, transform 0.6s ease;
+  }
+
+  .fade-up.visible {
+    opacity: 1;
+    transform: translateY(0);
+  }
+
+  /* RESPONSIVE */
+  @media (max-width: 768px) {
+    nav { padding: 1rem 1.5rem; }
+    .nav-links { display: none; }
+    section { padding: 4rem 1.25rem; }
+    .about-grid { grid-template-columns: 1fr; gap: 3rem; }
+    .hours-layout { grid-template-columns: 1fr; gap: 3rem; }
+    .hero-stats { gap: 1.5rem; }
+    .intro-strip { gap: 1.5rem; }
+  }
+</style>
+</head>
+<body>
+
+<nav>
+  <div class="nav-logo">1923 Barber Parlor</div>
+  <ul class="nav-links">
+    <li><a href="#services">Services</a></li>
+    <li><a href="#about">About</a></li>
+    <li><a href="#reviews">Reviews</a></li>
+    <li><a href="#hours">Hours</a></li>
+  </ul>
+  <a href="https://booksy.com/en-us/1526749_1923-barber-parlor_barber-shop_36952_beaumont" target="_blank" class="nav-book">Book Now</a>
+</nav>
+
+<section class="hero">
+  <div class="hero-pattern"></div>
+  <p class="hero-year">Est. 1923 · Beaumont, Texas</p>
+  <h1>Barber <span>Parlor</span></h1>
+  <p class="hero-sub">Classic cuts · Modern vibes · The H's finest</p>
+  <div class="hero-stats">
+    <div class="hero-stat">
+      <div class="hero-stat-n">5.0</div>
+      <div class="hero-stat-l">Star rating</div>
+    </div>
+    <div class="hero-stat-divider"></div>
+    <div class="hero-stat">
+      <div class="hero-stat-n">78+</div>
+      <div class="hero-stat-l">Reviews</div>
+    </div>
+    <div class="hero-stat-divider"></div>
+    <div class="hero-stat">
+      <div class="hero-stat-n">15+</div>
+      <div class="hero-stat-l">Yrs experience</div>
+    </div>
+  </div>
+  <div class="hero-cta">
+    <a href="https://booksy.com/en-us/1526749_1923-barber-parlor_barber-shop_36952_beaumont" target="_blank" class="btn-primary">Book appointment</a>
+    <a href="#services" class="btn-outline">View services</a>
+  </div>
+  <div class="scroll-hint">
+    <span>Scroll</span>
+    <svg viewBox="0 0 24 24"><path d="M12 5v14M5 12l7 7 7-7"/></svg>
+  </div>
+</section>
+
+<div class="intro-strip">
+  <div class="strip-item">
+    <svg viewBox="0 0 24 24"><path d="M20 21v-2a4 4 0 00-4-4H8a4 4 0 00-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>
+    Walk-ins welcome
+  </div>
+  <div class="strip-item">
+    <svg viewBox="0 0 24 24"><path d="M17 21v-2a4 4 0 00-4-4H5a4 4 0 00-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 00-3-3.87M16 3.13a4 4 0 010 7.75"/></svg>
+    Kids friendly
+  </div>
+  <div class="strip-item">
+    <svg viewBox="0 0 24 24"><rect x="2" y="7" width="20" height="14" rx="2"/><path d="M16 21V5a2 2 0 00-2-2h-4a2 2 0 00-2 2v16"/></svg>
+    Booth rentals
+  </div>
+  <div class="strip-item">
+    <svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+    5.0 stars on Booksy
+  </div>
+</div>
+
+<section id="services">
+  <div class="container">
+    <p class="section-label fade-up">What we do</p>
+    <h2 class="section-title fade-up">Our <em>services</em></h2>
+    <p class="section-desc fade-up">Every cut is a craft. Walk in, sit down, and leave looking like the best version of yourself.</p>
+    <div class="services-grid fade-up">
+      <div class="service-card">
+        <div class="service-icon">
+          <svg viewBox="0 0 24 24"><circle cx="12" cy="8" r="4"/><path d="M4 20c0-4 3.6-7 8-7s8 3 8 7"/></svg>
+        </div>
+        <div class="service-name">Men's haircut</div>
+        <div class="service-desc">Precision cuts for all hair types, tapered clean and styled exactly how you want it.</div>
+        <div class="service-price">From $35</div>
+      </div>
+      <div class="service-card">
+        <div class="service-icon">
+          <svg viewBox="0 0 24 24"><path d="M5 3l14 9-14 9V3z"/></svg>
+        </div>
+        <div class="service-name">Edge up</div>
+        <div class="service-desc">Clean, sharp lines. Strictly an edge — if you need a taper, book the full haircut.</div>
+        <div class="service-price">From $25</div>
+      </div>
+      <div class="service-card">
+        <div class="service-icon">
+          <svg viewBox="0 0 24 24"><path d="M12 2C8 6 6 10 6 13a6 6 0 0012 0c0-3-2-7-6-11z"/></svg>
+        </div>
+        <div class="service-name">Beard trim & detail</div>
+        <div class="service-desc">Shaping and edging of the beard with precision trimmers. Clean and defined.</div>
+        <div class="service-price">From $20</div>
+      </div>
+      <div class="service-card">
+        <div class="service-icon">
+          <svg viewBox="0 0 24 24"><path d="M17 21v-2a4 4 0 00-4-4H5a4 4 0 00-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 00-3-3.87M16 3.13a4 4 0 010 7.75"/></svg>
+        </div>
+        <div class="service-name">Kids haircut</div>
+        <div class="service-desc">Patient and welcoming with kids of all ages, including children on the spectrum.</div>
+        <div class="service-price">From $30</div>
+      </div>
+      <div class="service-card">
+        <div class="service-icon">
+          <svg viewBox="0 0 24 24"><circle cx="12" cy="8" r="4"/><path d="M4 20c0-3 3-5.5 8-5.5S20 17 20 20"/></svg>
+        </div>
+        <div class="service-name">Women's haircut</div>
+        <div class="service-desc">Skilled styling for women who want a sharp, clean cut from a trusted hand.</div>
+        <div class="service-price">From $30</div>
+      </div>
+      <div class="service-card">
+        <div class="service-icon">
+          <svg viewBox="0 0 24 24"><path d="M12 2l3 7h7l-6 4 2 7-6-4-6 4 2-7-6-4h7z"/></svg>
+        </div>
+        <div class="service-name">Haircut + shave</div>
+        <div class="service-desc">The full treatment — precision cut combined with a clean shave. The classic experience.</div>
+        <div class="service-price">From $55</div>
+      </div>
+    </div>
+    <div style="text-align:center; margin-top: 2.5rem;">
+      <a href="https://booksy.com/en-us/1526749_1923-barber-parlor_barber-shop_36952_beaumont" target="_blank" class="btn-primary">Book your appointment</a>
+    </div>
+  </div>
+</section>
+
+<section id="about">
+  <div class="container">
+    <div class="about-grid">
+      <div class="about-text">
+        <p class="section-label fade-up">Who we are</p>
+        <h2 class="section-title fade-up">Beaumont's <em>home</em> for the craft</h2>
+        <p class="about-text section-desc fade-up">1923 Barber Parlor is more than a barbershop — it's a community. Founded on the belief that everyone deserves to look and feel their best, we've built a space in Beaumont where skill meets comfort and every client leaves satisfied.</p>
+        <div class="about-features fade-up">
+          <div class="about-feature">
+            <div class="about-feature-dot"></div>
+            <p><strong>Veteran barbers with 15+ years experience</strong> — Krystal and the team have been perfecting their craft for over a decade and a half.</p>
+          </div>
+          <div class="about-feature">
+            <div class="about-feature-dot"></div>
+            <p><strong>Inclusive and welcoming environment</strong> — patient with children, experienced with all hair textures, and accommodating for clients with special needs.</p>
+          </div>
+          <div class="about-feature">
+            <div class="about-feature-dot"></div>
+            <p><strong>Booth rentals available</strong> — experienced barbers looking for a professional home can reach out about joining the team.</p>
+          </div>
+        </div>
+      </div>
+      <div class="fade-up">
+        <div class="about-visual">
+          <div class="about-visual-year">1923</div>
+          <div class="about-visual-text">The parlor experience</div>
+          <div class="about-visual-sub">Beaumont, Texas · 409-781-3455</div>
+          <div class="about-barbers">
+            <div class="barber-row">
+              <div class="barber-avatar">K</div>
+              <div>
+                <div class="barber-name">Krystal</div>
+                <div class="barber-title">Master barber · 15+ years</div>
+              </div>
+            </div>
+            <div class="barber-row">
+              <div class="barber-avatar">Q</div>
+              <div>
+                <div class="barber-name">Quin</div>
+                <div class="barber-title">Barber · Kids specialist</div>
+              </div>
+            </div>
+            <div class="barber-row">
+              <div class="barber-avatar">E</div>
+              <div>
+                <div class="barber-name">Elia</div>
+                <div class="barber-title">Barber · All hair textures</div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="reviews">
+  <div class="container">
+    <p class="section-label fade-up">What clients say</p>
+    <h2 class="section-title fade-up">5 stars, <em>every time</em></h2>
+    <div class="reviews-grid fade-up" style="margin-top: 2.5rem;">
+      <div class="review-card">
+        <div class="review-quote">"</div>
+        <p class="review-text">My family has been coming to Krystal for over a decade. She cuts both my boys' and husband's hair and is incredibly patient with kids on the spectrum. Everyone is always so friendly and welcoming.</p>
+        <div class="review-footer">
+          <div>
+            <div class="review-author">Long-time client</div>
+            <div class="review-source">Beaumont, TX · Birdeye</div>
+          </div>
+          <div class="stars">★★★★★</div>
+        </div>
+      </div>
+      <div class="review-card">
+        <div class="review-quote">"</div>
+        <p class="review-text">Great vibes, cool atmosphere, very friendly and welcoming staff who instantly make you feel at ease. Excellent service — listened, took their time, and delivered exactly what I wanted.</p>
+        <div class="review-footer">
+          <div>
+            <div class="review-author">Verified client</div>
+            <div class="review-source">Beaumont, TX · Birdeye</div>
+          </div>
+          <div class="stars">★★★★★</div>
+        </div>
+      </div>
+      <div class="review-card">
+        <div class="review-quote">"</div>
+        <p class="review-text">Quin is very patient and makes sure my son is comfortable at all times. He has video games and cartoons on for kids — always a good vibe. Highly recommend for kids AND adults!</p>
+        <div class="review-footer">
+          <div>
+            <div class="review-author">Verified client</div>
+            <div class="review-source">Beaumont, TX · Booksy</div>
+          </div>
+          <div class="stars">★★★★★</div>
+        </div>
+      </div>
+      <div class="review-card">
+        <div class="review-quote">"</div>
+        <p class="review-text">Amazing aura and personality! Professional and perfect barber. Did exactly what I asked — will definitely be a regular client at this shop.</p>
+        <div class="review-footer">
+          <div>
+            <div class="review-author">New client</div>
+            <div class="review-source">Beaumont, TX · Booksy</div>
+          </div>
+          <div class="stars">★★★★★</div>
+        </div>
+      </div>
+      <div class="review-card">
+        <div class="review-quote">"</div>
+        <p class="review-text">So as soon as I walked in I was caught by the amazing vibe of the shop. Elia made me very comfortable. Honestly I felt pampered — nobody has ever taken such great care to make sure my cut was exactly right.</p>
+        <div class="review-footer">
+          <div>
+            <div class="review-author">Verified client</div>
+            <div class="review-source">Beaumont, TX · Chamber of Commerce</div>
+          </div>
+          <div class="stars">★★★★★</div>
+        </div>
+      </div>
+      <div class="review-card">
+        <div class="review-quote">"</div>
+        <p class="review-text">Best barber I ever been to. Ms. Crystal cut my hair and after the first time I fell in love with that barbershop. I'm always going to go there — a regular for life.</p>
+        <div class="review-footer">
+          <div>
+            <div class="review-author">Regular client</div>
+            <div class="review-source">Beaumont, TX · Chamber of Commerce</div>
+          </div>
+          <div class="stars">★★★★★</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="hours">
+  <div class="container">
+    <div class="hours-layout">
+      <div>
+        <p class="section-label fade-up">Plan your visit</p>
+        <h2 class="section-title fade-up">Hours & <em>location</em></h2>
+        <div class="hours-table fade-up" style="margin-top: 2rem;">
+          <div class="hour-row"><span class="hour-day">Monday</span><span class="hour-closed">Closed</span></div>
+          <div class="hour-row"><span class="hour-day">Tuesday</span><span class="hour-time">9:00 AM – 6:00 PM</span></div>
+          <div class="hour-row"><span class="hour-day">Wednesday</span><span class="hour-time">9:00 AM – 6:00 PM</span></div>
+          <div class="hour-row"><span class="hour-day">Thursday</span><span class="hour-time">9:00 AM – 6:00 PM</span></div>
+          <div class="hour-row today"><span class="hour-day">Friday <span class="today-badge">Today</span></span><span class="hour-time">9:00 AM – 6:00 PM</span></div>
+          <div class="hour-row"><span class="hour-day">Saturday</span><span class="hour-time">9:00 AM – 5:00 PM</span></div>
+          <div class="hour-row"><span class="hour-day">Sunday</span><span class="hour-closed">Closed</span></div>
+        </div>
+      </div>
+      <div class="contact-block fade-up">
+        <div class="contact-item">
+          <div class="contact-icon">
+            <svg viewBox="0 0 24 24"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 013.07 9.81 19.79 19.79 0 01.01 1.18 2 2 0 012 0h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L6.09 7.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 16.92z"/></svg>
+          </div>
+          <div>
+            <div class="contact-label">Phone</div>
+            <div class="contact-value"><a href="tel:4097813455">(409) 781-3455</a></div>
+          </div>
+        </div>
+        <div class="contact-item">
+          <div class="contact-icon">
+            <svg viewBox="0 0 24 24"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg>
+          </div>
+          <div>
+            <div class="contact-label">Address</div>
+            <div class="contact-value">5955 Phelan Blvd, Suite P<br>Beaumont, TX 77706</div>
+          </div>
+        </div>
+        <div class="contact-item">
+          <div class="contact-icon">
+            <svg viewBox="0 0 24 24"><rect x="2" y="2" width="20" height="20" rx="5"/><path d="M16 11.37A4 4 0 1112.63 8 4 4 0 0116 11.37z"/><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/></svg>
+          </div>
+          <div>
+            <div class="contact-label">Instagram</div>
+            <div class="contact-value"><a href="https://instagram.com/1923.barber.parlor" target="_blank">@1923.barber.parlor</a></div>
+          </div>
+        </div>
+        <div style="margin-top: 1rem;">
+          <a href="https://booksy.com/en-us/1526749_1923-barber-parlor_barber-shop_36952_beaumont" target="_blank" class="btn-primary">Book online now</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="footer-logo">1923 Barber Parlor</div>
+  <p class="footer-tagline">Classic cuts · Modern vibes · Beaumont, TX</p>
+  <ul class="footer-links">
+    <li><a href="#services">Services</a></li>
+    <li><a href="#about">About</a></li>
+    <li><a href="#reviews">Reviews</a></li>
+    <li><a href="#hours">Hours</a></li>
+  </ul>
+  <p class="footer-copy">5955 Phelan Blvd Suite P, Beaumont TX 77706 · (409) 781-3455</p>
+</footer>
+
+<script>
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach((entry, i) => {
+      if (entry.isIntersecting) {
+        setTimeout(() => entry.target.classList.add('visible'), i * 80);
+      }
+    });
+  }, { threshold: 0.1 });
+
+  document.querySelectorAll('.fade-up').forEach(el => observer.observe(el));
+
+  const days = ['Sunday','Monday','Tuesday','Wednesday','Thursday','Friday','Saturday'];
+  const today = days[new Date().getDay()];
+  document.querySelectorAll('.hour-day').forEach(el => {
+    if (el.textContent.trim().startsWith(today)) {
+      el.closest('.hour-row').classList.add('today');
+    } else {
+      el.closest('.hour-row').classList.remove('today');
+    }
+  });
+</script>
+</body>
+</html>
